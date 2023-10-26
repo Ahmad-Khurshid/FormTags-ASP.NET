@@ -1,0 +1,46 @@
+﻿@model FormTagHeilpers.Models.EmployeeModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+<form class=" d-grid" asp-controller="Home" asp-action="Index" method="post"> 
+           <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control" > 
+               <option value="empty">Select Gender</option>
+           </select> 
+               <br />  
+            <input asp-for ="Name" placeholder="Enter your Name" class="form-control"/> 
+            <br /> 
+             <input asp-for ="EmployeeId" placeholder="Enter your Id" class="form-control" /> 
+            <br /> 
+             <input asp-for ="Age" placeholder="Enter your Age"  class="form-control"/> 
+            <br /> 
+             <input asp-for ="Designation" placeholder="Enter your Designation"  class="form-control"/> 
+            <br /> 
+                  <lable>Married :</lable>
+              <div class="form-check"> 
+  <input class="form-check-input" type="radio"  asp-for="Married" value="Yes">
+  <label class="form-check-label" for="flexRadioDefault1">
+   Yes
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio"  asp-for="Married" value="No">
+  <label class="form-check-label" for="flexRadioDefault2">
+   No
+  </label>
+</div>
+
+            <button type="submit" class="btn btn-outline-primary btn-block"  class="form-control">Submit</button>
+
+</form> 
+        </div> 
+    </div>
+
+</div>
